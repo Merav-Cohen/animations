@@ -1222,6 +1222,8 @@ p.nominalBounds = new cjs.Rectangle(0,14.9,248.5,143.5);
 		var self = this; 
 		self.stop();
 		
+		createjs.Sound.registerSound("/sounds/הכבשהששהעשרכמוים_.mp3","song");
+		
 		self.start.addEventListener("click", clickPlayStart);
 		
 		function clickPlayStart()
@@ -1230,13 +1232,14 @@ p.nominalBounds = new cjs.Rectangle(0,14.9,248.5,143.5);
 		}
 	}
 	this.frame_1 = function() {
+		createjs.Sound.play("song");
 		playSound("הכבשהששהעשרכמוים",-1);
 	}
 	this.frame_908 = function() {
 		var self = this; 
 		self.stop();
 		
-		createjs.Sound.stop();
+		createjs.Sound.stop("song");
 		
 		self.replay.addEventListener("click", clickRestart);
 		
